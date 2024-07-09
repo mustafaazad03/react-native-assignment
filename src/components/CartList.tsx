@@ -1,9 +1,24 @@
-// src/components/CartList.tsx
-import React from "react";
-import { FlatList, View, Text, TouchableOpacity } from "react-native";
+import {
+	FlatList,
+	View,
+	Text,
+	TouchableOpacity,
+	ListRenderItemInfo,
+} from "react-native";
 
-const CartList = ({ cartItems, onCartItemPress }: any) => {
-	const renderItem = ({ item }: any) => (
+interface CartItem {
+	id: number;
+	name: string;
+	quantity: number;
+}
+
+interface CartListProps {
+	cartItems: CartItem[];
+	onCartItemPress: (item: CartItem) => void;
+}
+
+const CartList = ({ cartItems, onCartItemPress }: CartListProps) => {
+	const renderItem = ({ item }: ListRenderItemInfo<CartItem>) => (
 		<TouchableOpacity onPress={() => onCartItemPress(item)}>
 			<View>
 				<Text>

@@ -13,12 +13,12 @@ const HomeStack = () => (
 		<Stack.Screen
 			name="HomeList"
 			component={HomeScreen}
-			options={{ title: "Home", headerShown: false }}
+			options={{ title: "Home" }}
 		/>
 		<Stack.Screen
 			name="Details"
 			component={DetailsScreen}
-			options={{ title: "Details", headerShown: false }}
+			options={{ title: "Details" }}
 		/>
 	</Stack.Navigator>
 );
@@ -28,7 +28,7 @@ const CartStack = () => (
 		<Stack.Screen
 			name="CartList"
 			component={CartScreen}
-			options={{ title: "Cart", headerShown: false }}
+			options={{ title: "Cart" }}
 		/>
 		<Stack.Screen name="Details" component={DetailsScreen} />
 	</Stack.Navigator>

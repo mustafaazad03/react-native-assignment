@@ -1,7 +1,7 @@
 import React, { createContext, useContext } from "react";
 import useAsyncStorage from "../hooks/useAsyncStorage";
 
-interface CartItem {
+export interface CartItem {
 	id: number;
 	name: string;
 	price: number;

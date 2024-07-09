@@ -1,12 +1,22 @@
-// src/components/PizzaList.tsx
-import React from "react";
-import { FlatList, View, Text, Button } from "react-native";
+import { FlatList, View, Text, Button, ListRenderItemInfo } from "react-native";
 import { useCart } from "../context/CartContext";
 
-const PizzaList = ({ pizzas, onPizzaPress }: any) => {
+interface Pizza {
+	id: number;
+	name: string;
+	price: number;
+	quantity: number;
+}
+
+interface PizzaListProps {
+	pizzas: Pizza[];
+	onPizzaPress: (pizza: Pizza) => void;
+}
+
+const PizzaList = ({ pizzas, onPizzaPress }: PizzaListProps) => {
 	const { addToCart } = useCart();
 
-	const renderItem = ({ item }: any) => (
+	const renderItem = ({ item }: ListRenderItemInfo<Pizza>) => (
 		<View>
 			<Text>{item.name}</Text>
 			<Button title="View Details" onPress={() => onPizzaPress(item)} />
