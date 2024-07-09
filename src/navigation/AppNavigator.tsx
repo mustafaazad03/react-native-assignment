@@ -13,9 +13,13 @@ const HomeStack = () => (
 		<Stack.Screen
 			name="HomeList"
 			component={HomeScreen}
-			options={{ title: "Home" }}
+			options={{ title: "Home", headerShown: false }}
 		/>
-		<Stack.Screen name="Details" component={DetailsScreen} />
+		<Stack.Screen
+			name="Details"
+			component={DetailsScreen}
+			options={{ title: "Details", headerShown: false }}
+		/>
 	</Stack.Navigator>
 );
 
@@ -24,7 +28,7 @@ const CartStack = () => (
 		<Stack.Screen
 			name="CartList"
 			component={CartScreen}
-			options={{ title: "Cart" }}
+			options={{ title: "Cart", headerShown: false }}
 		/>
 		<Stack.Screen name="Details" component={DetailsScreen} />
 	</Stack.Navigator>
@@ -32,8 +36,16 @@ const CartStack = () => (
 
 const AppNavigator = () => (
 	<Tab.Navigator>
-		<Tab.Screen name="Home" component={HomeStack} />
-		<Tab.Screen name="Cart" component={CartStack} />
+		<Tab.Screen
+			name="Home"
+			component={HomeStack}
+			options={{ headerShown: false }}
+		/>
+		<Tab.Screen
+			name="Cart"
+			component={CartStack}
+			options={{ headerShown: false }}
+		/>
 	</Tab.Navigator>
 );
 
